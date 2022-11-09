@@ -1,4 +1,4 @@
-# Tugas 7 PBP
+# counter_7
 
 ## Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget dan jelaskan perbedaan dari keduanya.
 
@@ -40,7 +40,9 @@ Const digunakan untuk deklarasi variabel immutable yang nilainya bersifat konsta
 
 ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 
-1. Membuat fungsi decrementCounter yang mirip dengan incrementCounter tapi kegunaannya untuk mengurangi counter sebagai berikut:
+1. Menjalankan perintah ```flutter create counter_7``` pada terminal
+
+2. Membuat fungsi decrementCounter yang mirip dengan incrementCounter tapi kegunaannya untuk mengurangi counter sebagai berikut:
     ```
     void _decrementCounter() {
         setState(() {
@@ -49,14 +51,14 @@ Const digunakan untuk deklarasi variabel immutable yang nilainya bersifat konsta
     }
     ```
 
-2. Menambahkan conditional di bawah untuk kondisi ganjil dan genap:
+3. Menambahkan conditional di bawah untuk kondisi ganjil dan genap:
     ```
     _counter % 2 == 0 ?
     const Text('GENAP', style: TextStyle(fontSize:24, color: Colors.blue)) :
     const Text('GANJIL', style: TextStyle(fontSize:24, color: Colors.red)),
     ```
 
-3. Menambahkan floatingActionButton sebagai berikut:
+4. Menambahkan floatingActionButton sebagai berikut:
     ```
     floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
