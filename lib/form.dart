@@ -18,7 +18,7 @@ class _AddBudgetPageState extends State<AddBudgetPage> {
   int nominal = 0;
   DateTime tanggal = DateTime.now();
 
-  String jenis = 'Pemasukan';
+  String? jenis = null;
   List<String> listJenis = ['Pemasukan', 'Pengeluaran'];
   List<Object> listForm = [];
   
@@ -104,21 +104,23 @@ class _AddBudgetPageState extends State<AddBudgetPage> {
                   ),
                 ),
 
-                // blm bs MUNCUL PILIH JENIS NYA
+                // JENIS
                 Center(
                   child: DropdownButton<String>(
-                    value: jenis,
                     icon: const Icon(Icons.keyboard_arrow_down),
                     hint: const Text(
-                        "Pilih Jenis",
-                        textAlign: TextAlign.center,
-                      ),
-                    items: listJenis.map((String items) {
-                        return DropdownMenuItem(
-                          value: items,
-                          child: Text(items),
-                        );
-                      }).toList(),
+                      "Pilih Jenis",
+                      textAlign: TextAlign.center,
+                    ),
+                    value: jenis,
+                    
+                    items: <String>['Pemasukan', 'Pengeluaran']
+                    .map((String val) => DropdownMenuItem<String>(
+                          value: val,
+                          child: Text(val),
+                        ))
+                    .toList(),
+
                     onChanged: (String? value) {
                       setState(() {
                         jenis = value!;
@@ -127,6 +129,7 @@ class _AddBudgetPageState extends State<AddBudgetPage> {
                   ),
                 ),
 
+                // TANGGAL
                 ListTile(
                   title: Text(tanggal.toString()),
                   leading: TextButton.icon(
@@ -146,6 +149,7 @@ class _AddBudgetPageState extends State<AddBudgetPage> {
                     },
                   ),
                 ),
+                
               ],
             ),
           ),
@@ -161,7 +165,7 @@ class _AddBudgetPageState extends State<AddBudgetPage> {
               if (_formKey.currentState!.validate()) {
                 listForm.add(judul);
                 listForm.add(nominal);
-                listForm.add(jenis);
+                listForm.add(jenis.toString());
                 listForm.add(tanggal);
                 list.add(listForm);
                 listForm = [];
