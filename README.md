@@ -8,8 +8,6 @@ Contoh              : Icon, IconButton, dan text
 Stateful widget     : Widget yang sifatnya dinamis atau dapat diubah<br>
 Contoh              : Checkbox, Radio, Slider, InkWell, Form, dan TextField
 
-<hr>
-
 ## Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya
 
 Material App : root dari aplikasi<br>
@@ -20,7 +18,6 @@ Row : display children dalam format baris horizontal<br>
 Text : display string<br>
 AppBar : display toolbar dan widgets<br>
 
-<hr>
 
 ## Apa fungsi dari setState()? Jelaskan variabel apa saja yang dapat terdampak dengan fungsi tersebut.
 
@@ -28,15 +25,11 @@ setState() berfungsi untuk memberi tahu Flutter bahwa terdapat Widget yang berub
 
 Variabel yang terdampak adalah variabel yang berubah saat pemanggilan fungsi tersebut.
 
-<hr>
-
 ## Jelaskan perbedaan antara const dengan final.
 
 Final digunakan untuk deklarasi variabel immutable yang nilainya sudah ataupun belum diketahui pada saat waktu kompilasi berjalan atau dengan kata lain nilai final akan diketahui pada saat **runtime**, tetapi hanya disetel sekali.
 
 Const digunakan untuk deklarasi variabel immutable yang nilainya bersifat konstan dan harus sudah diketahui pada saat waktu kompilasi atau **compile time**, dengan kata lain variabel tersebut harus diberikan value secara langsung.
-
-<hr>
 
 ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 
