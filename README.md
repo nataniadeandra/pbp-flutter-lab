@@ -122,3 +122,52 @@ Navigator pada Flutter menggunakan implementasi stack. Metode Navigator.push aka
 3. Menambahkan TextButton pada ```form.dart``` agar ketika button tersebut ditekan, input user akan disimpan ke suatu list.
 
 4. Membuat ```data.dart``` untuk menampilkan data dari list pada poin 3 menggunakan ListView.builder.
+
+# Tugas 9
+
+## Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+
+Bisa dengan menggunakan ```manual serialization``` built-in JSON decoder dari ```dart:convert```. Kita bisa gunakan jsonDecode untuk mengubah ```raw JSON``` menjadi ```Map<String, dynamic>```.
+
+Namun, membuat model akan lebih baik karena meminimalisir ```field typo``` sehingga tidak akan error saat runtime.
+
+## Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+
+- Scaffold : menyediakan struktur dasar dan styling dalam aplikasi<br>
+- AppBar : widget yang menampilkan toolbar dan widgets lain<br>
+- Center : menempatkan widgets di tengah<br>
+- Column : widget yang menampilkan widgets children dalam format kolom vertikal<br>
+- Row : widget yang menampilkan widgets children dalam format baris horizontal<br>
+- Text : widget untuk menampilkan string<br>
+- Drawer : widget untuk menampilkan tautan navigasi<br>
+- Padding : widget untuk memberikan padding<br>
+- Container : widget multifungsi yang bisa digunakan untuk mengatur ukuran serta posisi dari widgets lainnya<br>
+- SizedBox : kotak dengan ukuran tertentu<br>
+- ListView : display children satu per satu
+
+## Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter.
+
+1. Lakukan ```flutter pub add http``` pada terminal proyek Flutter untuk menambahkan package http dan potongan kode ```<uses-permission android:name="android.permission.INTERNET" />``` pada ```android/app/src/main/AndroidManifest.xml```.
+2. Membuat model pada ```model/watch_list.dart``` menggunakan ```https://app.quicktype.io/```.
+3. Melakukan pengambilan data menggunakan metode ```http.get```.
+4. Mengkonversikan objek yang didapatkan menjadi model yang telah kita buat.
+5. Menampilkan data pada Flutter menggunakan ```FutureBuilder```.
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+
+1. Menambahkan drawer untuk ```WatchListPage``` pada ```widget/drawer.dart```, sebagai berikut:
+    ```
+    ListTile(
+        title: const Text('My Watch List'),
+        onTap: () {
+            Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => const WatchListPage()),
+            );
+        },
+    ),
+    ```
+2. Membuat model ```WatchList``` pada ```model/watch_list.dart``` menggunakan ```https://app.quicktype.io/```.
+3. Membuat method untuk fetch data dari ```https://pbp-katalog-natania.herokuapp.com/mywatchlist/json/``` pada ```function/fetch_watch_list.dart```.
+4. Menampilkan data pada Flutter menggunakan ```FutureBuilder```.
+5. Membuat ```pages/watch_list_detail_page.dart``` sebagai halaman detail untuk tiap watchlist.
