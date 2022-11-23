@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:counter_7/data.dart';
-import 'package:counter_7/drawer.dart';
+import 'package:counter_7/pages/data.dart';
+import 'package:counter_7/widget/drawer.dart';
 import 'package:counter_7/main.dart';
 
 class AddBudgetPage extends StatefulWidget {
@@ -114,7 +114,7 @@ class _AddBudgetPageState extends State<AddBudgetPage> {
                     ),
                     value: jenis,
                     
-                    items: <String>['Pemasukan', 'Pengeluaran']
+                    items: listJenis
                     .map((String val) => DropdownMenuItem<String>(
                           value: val,
                           child: Text(val),
@@ -149,7 +149,7 @@ class _AddBudgetPageState extends State<AddBudgetPage> {
                     },
                   ),
                 ),
-                
+
               ],
             ),
           ),

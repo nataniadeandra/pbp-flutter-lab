@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:counter_7/drawer.dart';
-import 'package:counter_7/form.dart' as form;
+import 'package:counter_7/widget/drawer.dart';
+import 'package:counter_7/pages/form.dart' as form;
 import 'package:counter_7/main.dart';
 
 class DataBudgetPage extends StatefulWidget {
